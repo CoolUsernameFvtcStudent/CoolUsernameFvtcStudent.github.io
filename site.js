@@ -16,6 +16,6 @@ if (isMorning) {
     we.textContent = "Good evening!";
 }
 
-
+localStorage.setItem("It's a secret to everybody.", "value66");
 
 console.log("https://fvtc.software/appel/modern-javascript/assignments/homepage"); 
