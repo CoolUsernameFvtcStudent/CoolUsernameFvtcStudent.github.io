@@ -17,5 +17,3 @@ if (isMorning) {
 }
 
 localStorage.setItem("It's a secret to everybody.", "super cool secret");
-
-console.log("https://fvtc.software/appel/modern-javascript/assignments/homepage"); 
