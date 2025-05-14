@@ -1,6 +1,13 @@
 const we = document.querySelector("#welcome")
 const previous = document.getElementById('prev')
 const next = document.getElementById('next')
+const submitNew = document.querySelector("input")
+const input = document.getElementById('new-todo')
+const submitItButton = document.querySelector('button[type="button"]')
+const todoList = document.querySelector(".todo-list")
+
+
+
 
 
 previous.addEventListener('click', () => {
@@ -70,3 +77,49 @@ setInterval(() => {
     //
 }, 5000)
 
+
+
+console.log("1")
+
+
+// Get the list from local storage
+const todos = JSON.parse(localStorage.getItem('todo-list')) || []
+console.log("2")
+// Add a new item to the list
+//todos.push({ text: input.value, completed: false })
+
+// Save the list to local storage
+//localStorage.setItem('todo-list', JSON.stringify(todos))
+
+// Clear the li's before we recreate them
+//todoList.innerHTML = ''
+
+// Create and add new list items to the DOM
+//const li = document.createElement('li')
+// li.textContent = todo.text
+// todoList.append(li)
+console.log("3")
+console.log({ text: input.value, completed: false })
+submitItButton.addEventListener('click', () => {
+    todos.push({ text: input.value, completed: false })
+    localStorage.setItem('todo-list', JSON.stringify(todos))
+renderTodos();
+
+
+
+});
+
+
+
+
+function renderTodos() {
+todoList.innerHTML = ''
+
+todos.forEach(todo => {
+    const li = document.createElement('li')
+   li.textContent = todo.text
+todoList.append(li) 
+})
+}
+
+renderTodos();
